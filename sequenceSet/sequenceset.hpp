@@ -1,7 +1,7 @@
 /* Sequence Set - Classe Principal
  *
  * by Joukim, Fevereiro de 2021 - Estrutura de Dados (GCC216)
- * Caracteristicas da primeira implementação - fevereiro de 2021:
+ * Características da primeira implementação - fevereiro de 2021:
  * -> código adaptado do código de vetor expansível
  * -> uso de constantes (em configuração.hpp) para facilitar ajustes
  * -> se dado pode ser inserido em dois pacotes, escolhe o que gera 
@@ -54,7 +54,7 @@ class sequenceset {
 
 sequenceset::sequenceset(string arquivo) {
     nomeArquivo = arquivo;
-    ifstream arqEntrada(nomeArquivo);
+    ifstream arqEntrada(nomeArquivo.c_str(), ios::binary);
     cabecalhoArqSS cabecalho;
 
     // verifica se o arquivo existe, se sim, lê o cabeçalho 
@@ -123,7 +123,7 @@ void sequenceset::gravarPacoteNoArquivo(pacote* umPacote, unsigned posicao) {
      // pula o cabeçalho do arquivo e o número de páginas anteriores
     unsigned posArq = sizeof(cabecalhoArqSS) + posicao*sizeof(pacote); 
     // precisa ser fstream para não apagar o arquivo já existente
-    fstream arqSaida(nomeArquivo, ios::in | ios::out);
+    fstream arqSaida(nomeArquivo.c_str(), ios::in | ios::out | ios::binary);
     arqSaida.seekp(posArq);
     arqSaida.write((const char*) umPacote, sizeof(pacote));
     arqSaida.close();   
