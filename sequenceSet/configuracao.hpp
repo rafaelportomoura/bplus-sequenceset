@@ -2,11 +2,11 @@
  * (tipo de elemento armazenado, tamanho do pacote, etc.)
  *
  * by Joukim, Fevereiro de 2021 - Estrutura de Dados (GCC216)
- * Caracteristicas desta implementação - fevereiro de 2021:
- * -> usa chave/valor como dado de exemplo, mas que pode 
+ * Características desta implementação - fevereiro de 2021:
+ * -> usa chave/valor como dado de exemplo, mas que pode
  * -> ser trocado com facilidade, usando typedef
- * -> 
- * -> tamanho máximo e mínimo do pacote definido por 
+ * ->
+ * -> tamanho máximo e mínimo do pacote definido por
  * -> constantes (CAP_PACOTE e MIN_PACOTE)
  */
 
