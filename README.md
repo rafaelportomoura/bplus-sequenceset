@@ -34,3 +34,13 @@ struct dado {
 Adelir Aparecida Saczk,PQ,2,01/03/2018,28/02/2021,Química  
 Adriano Teodoro Bruzi,PQ,2,01/03/2018,28/02/2021,Agronomia  
 Alberto Colombo,PQ,2,01/03/2018,28/02/2021,Engenharia Agrícola   
+
+
+## Operações 
+
+O arquivo de entradas, veja arquivo teste.input no código fornecido, deverá conter um conjunto de operações válidas na implementação realizada. O arquivo de entradas deverá conter ao menos:  
+100 operações de inserção;  
+20 operações de busca;  
+1 operação de impressão;  
+1 operação de depuração.  
+Observação: os dados inseridos não precisam ser reais ou mesmo terem significado prático, podendo ser utilizados valores como “aaaa”, “abab”, etc. nos campos da estrutura.   
