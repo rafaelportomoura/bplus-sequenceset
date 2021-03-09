@@ -10,8 +10,7 @@ Enunciado da atividade: [Atividade de Implementação - Árvore B+](https://docs
 
 Link para entrega da [atividade](https://campusvirtual.ufla.br/presencial/mod/assign/view.php?id=469555)
 
-
-**Sorteio:**  
+## Sorteio: 
 Grupo  17 - Rafael Porto Vieira de Moura, Rodrigo Faria Melo Freitas, Tales Ribeiro Magalhães  
 Estrutura: Bolsistas Produtividade do CNPq na UFLA - Ordem: mínimo de chaves 3, máximo de chaves 6  
 
