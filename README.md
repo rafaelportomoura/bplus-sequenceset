@@ -42,4 +42,5 @@ O arquivo de entradas, veja arquivo teste.input no código fornecido, deverá co
 * 20 operações de busca;  
 * 1 operação de impressão;  
 * 1 operação de depuração.  
+
 Observação: os dados inseridos não precisam ser reais ou mesmo terem significado prático, podendo ser utilizados valores como “aaaa”, “abab”, etc. nos campos da estrutura.   
