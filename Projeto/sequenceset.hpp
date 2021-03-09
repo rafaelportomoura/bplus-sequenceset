@@ -159,7 +159,7 @@ void sequenceset::inserirDado(dado umDado) {
     if ( pacoteDestino->cheio() ) {
         unsigned posicaoNovoPacote = encontrarProxPosDisponivel();
         pacote* novoPacote = dividirPacote(pacoteDestino, posicaoNovoPacote); 
-        if ( umDado.chave > novoPacote->elementos[0].chave )
+        if ( umDado.nome > novoPacote->elementos[0].nome )
             novoPacote->inserir(umDado);
         else 
             pacoteDestino->inserir(umDado);
@@ -197,7 +197,7 @@ unsigned sequenceset::encontrarPacoteParaInsercao(pacote* umPacote, dado umDado)
         // este laço vai lendo pacotes do disco, enquanto a chave
         // for maior que os valores do pacote atual
         while ( (umPacote->posProximoPacote != POS_INVALIDA)
-                 and (umPacote->chaveEhMaiorQueTodos(umDado.chave)) ) {
+                 and (umPacote->chaveEhMaiorQueTodos(umDado.nome)) ) {
             posicao = umPacote->posProximoPacote;
             lerPacoteDoArquivo(umPacote, posicao);
         }
@@ -249,9 +249,9 @@ dado sequenceset::buscaBinaria(dado vetor[], int inicio, int fim, tipoChave chav
     int meio = (inicio+fim)/2;
 
     if (inicio <= fim) {
-        if (chave > vetor[meio].chave)
+        if (chave > vetor[meio].nome)
             return buscaBinaria(vetor,meio+1,fim,chave);
-        else if (chave < vetor[meio].chave)
+        else if (chave < vetor[meio].nome)
             return buscaBinaria(vetor,inicio,meio-1,chave);
         else
             return vetor[meio];

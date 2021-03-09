@@ -1,3 +1,4 @@
+#include <cstring>
 #include <iostream>
 #include "sequenceset.hpp"
 
@@ -14,13 +15,32 @@ int main() {
             cin >> operacao;
             switch (operacao) {
                 case 'i': // inserir
-                    cin >> umDado.chave >> umDado.valor;
+                    cin.ignore();
+                    getline(cin, umaChave );
+                    strcpy(umDado.nome,umaChave.c_str());
+                    
+                    cin>>umaChave;
+                    strcpy(umDado.modalidade,umaChave.c_str());
+                    
+                    cin>>umaChave;
+                    strcpy(umDado.nivel,umaChave.c_str());
+                    
+                    cin>>umaChave;
+                    strcpy(umDado.inicio,umaChave.c_str());
+                    
+                    cin>>umaChave;
+                    strcpy(umDado.termino,umaChave.c_str());
+
+                    cin.ignore();
+                    getline(cin, umaChave );
+                    strcpy(umDado.area,umaChave.c_str());
+
                     meuSeqSet.inserirDado(umDado);
                     break;
                 case 'b': // buscar
                     cin >> umaChave;
                     umDado = meuSeqSet.buscar(umaChave);
-                    cout << "Busca: "<< umDado.chave << "/" << umDado.valor << endl;
+                    cout << "Busca: "<< umDado.nome << "/" << umDado.area << endl;
                     break;
                 case 'p': // mostrar estrutura
                     meuSeqSet.imprimir();
