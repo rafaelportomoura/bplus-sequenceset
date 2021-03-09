@@ -257,7 +257,7 @@ dado sequenceset::buscaBinaria(dado vetor[], int inicio, int fim, tipoChave chav
             return vetor[meio];
     } else { // inicio == fim, ou seja, não há mais o que buscar
         // retornamos -1 para indicar posição não encontrada
-        throw runtime_error("Busca: elemento não encontrado.");
+        throw runtime_error("Busca: elemento nao encontrado.");
     } 
 }
 
@@ -280,12 +280,12 @@ void sequenceset::imprimir() {
 
 void sequenceset::depurar() {
     cout << "-*- Dados do Sequence Set -*-" << endl
-         << "Número de pacotes: " << numPacotes << endl
-         << "Posição do primeiro pacote: " << posPrimeiroPacote << endl
-         << "Próxima posição vazia (-1 se não tiver remoção): " << proxPosicaoVazia << endl;
+         << "Numero de pacotes: " << numPacotes << endl
+         << "Posicao do primeiro pacote: " << posPrimeiroPacote << endl
+         << "Proxima posicao vazia (-1 se nao tiver remocao): " << proxPosicaoVazia << endl;
     if (numPacotes > 0) {
         cout << "Dados dos pacotes no formato: "
-             << "{posição do pacote}(número de elementos/próximo pacote)[elementos]"
+             << "{posicao do pacote}(numero de elementos/proximo pacote)[elementos]"
              << endl;
         pacote* auxiliar = new pacote();
         unsigned posicao = posPrimeiroPacote;

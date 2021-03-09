@@ -32,7 +32,7 @@ int main() {
                     // será tratado no while
                     break;
                 default:
-                    cout << "Opção inválida!" << endl;
+                    cout << "Opcao invalida!" << endl;
             }
         } catch (runtime_error& e) {
             cerr << e.what() << endl;
