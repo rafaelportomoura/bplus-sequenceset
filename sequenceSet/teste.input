@@ -1,20 +1,431 @@
-i 10 dez
-i 20 vinte
-i 30 trinta
-i 40 quarenta
+i
+Alexandre
+PQ 2 20/03/2017 19/02/2022
+Ciencia da Computacao
+i
+Augusto
+PQ 2 20/03/2018 19/02/2023
+Agricola
+i
+Breno
+PQ 2 20/03/2019 19/02/2024
+Agricola
+i
+Bruno
+PQ 2 20/03/2020 19/02/2025
+Agronomia
+i
+Caio
+PQ 2 20/03/2021 19/02/2026
+Ciencia da Computacao
+i
+Daniel
+PQ 2 20/03/2017 19/02/2022
+Agricola
+i
+Danilo
+PQ 2 20/03/2018 19/02/2023
+Agronomia
+i
+Eduardo
+PQ 2 20/03/2019 19/02/2024
+Ciencia da Computacao
+i
+Enrico
+PQ 1A 20/03/2020 19/02/2025
+Agricola
+i
+Enzo
+PQ 2 20/03/2021 19/02/2026
+Agronomia
+i
+Erick
+PQ 2 20/03/2017 19/02/2022
+Ciencia da Computacao
+i
+Felipe
+PQ 2 20/03/2018 19/02/2023
+Agronomia
+i
+Fernando
+PQ 1B 20/03/2019 19/02/2024
+Agronomia
+i
+Francisco
+PQ 2 20/03/2020 19/02/2025
+Agronomia
+i
+Frederico
+PQ 1C 20/03/2021 19/02/2026
+Ciencia da Computacao
+i
+Guilherme
+DT 2 20/03/2017 19/02/2022
+Agronomia
+i
+Gustavo
+PQ 2 20/03/2018 19/02/2023
+Agricola
+i
+Henrique
+PQ 2 20/03/2019 19/02/2024
+Alimentos
+i
+Henry
+PQ 1D 20/03/2020 19/02/2025
+Agronomia
+i
+Ian
+PQ 2 20/03/2017 19/02/2022
+Ciencia da Computacao
 p
-i 50 cincoenta
+i
+Isaac
+PQ 1A 20/03/2018 19/02/2023
+Alimentos
+i
+Joao
+PQ 2 20/03/2019 19/02/2024
+Alimentos
+i
+Kaique
+PQ 2 20/03/2020 19/02/2025
+Agricola
+i
+Leonardo
+PQ 2 20/03/2021 19/02/2026
+Ciencia da Computacao
+i
+Luan
+DT 1B 20/03/2017 19/02/2022
+Alimentos
+i
+Lucas
+PQ 2 20/03/2018 19/02/2023
+Ciencia da Computacao
+i
+Mathias
+DT 1C 20/03/2019 19/02/2024
+Quimica
+i
+Murilo
+PQ 2 20/03/2020 19/02/2025
+Alimentos
+i
+Nathan
+PQ 2 20/03/2021 19/02/2026
+Agronomia
+i
+Otavio
+PQ 1D 20/03/2017 19/02/2022
+Agricola
+i
+Pietro
+PQ 2 20/03/2018 19/02/2023
+Quimica
+i
+Rafael
+PQ 2 20/03/2019 19/02/2024
+Ciencia da Computacao
+i
+Raul
+PQ 1A 20/03/2020 19/02/2025
+Quimica
+i
+Rian
+PQ 2 20/03/2021 19/02/2026
+Agronomia
+i
+Ricardo
+PQ 1B 20/03/2017 19/02/2022
+Quimica
+i
+Rodrigo
+PQ 2 20/03/2018 19/02/2023
+Ciencia da Computacao
+i
+Samuel
+PQ 2 20/03/2019 19/02/2024
+Alimentos
+i
+Theo
+PQ 1C 20/03/2020 19/02/2025
+Quimica
+i
+Thiago
+PQ 2 20/03/2021 19/02/2026
+Ciencia da Computacao
+i
+Thomas
+PQ 2 20/03/2017 19/02/2022
+Quimica
 p
-i 60 sessenta
+i
+Vicente
+PQ 1D 20/03/2018 19/02/2023
+Agricola
+i
+Vinicius
+PQ 2 20/03/2019 19/02/2024
+Quimica
+i
+Vitor
+PQ 2 20/03/2020 19/02/2025
+Agronomia
+i
+Yago
+PQ 2 20/03/2021 19/02/2026
+Ciencia da Computacao
+i
+Ygor
+PQ 1A 20/03/2017 19/02/2022
+Quimica
+i
+Yuri
+PQ 2 20/03/2018 19/02/2023
+Agronomia
+i
+Agatha
+PQ 1B 20/03/2019 19/02/2024
+Quimica
+i
+Amanda
+PQ 1C 20/03/2020 19/02/2025
+Agronomia
+i
+Ana
+PQ 2 20/03/2021 19/02/2026
+Agronomia
+i
+Antonela
+PQ 1D 20/03/2017 19/02/2022
+Quimica
+i
+Aurora
+PQ 1A 20/03/2018 19/02/2023
+Ciencia da Computacao
+i
+Beatriz
+PQ 2 20/03/2019 19/02/2024
+Quimica
+i
+Bianca
+PQ 1B 20/03/2020 19/02/2025
+Alimentos
+i
+Bruna
+PQ 1C 20/03/2021 19/02/2026
+Agricola
+i
+Camila
+PQ 2 20/03/2017 19/02/2022
+Quimica
+i
+Carolina
+PQ 1A 20/03/2018 19/02/2023
+Ciencia da Computacao
+i
+Catarina
+PQ 2 20/03/2019 19/02/2024
+Agronomia
+i
+Clara
+PQ 2 20/03/2020 19/02/2025
+Agricola
+i
+Clarice
+PQ 2 20/03/2021 19/02/2026
+Agricola
+i
+Eduarda
+PQ 1B 20/03/2017 19/02/2022
+Quimica
 p
-i 5 cinco
-i 7 sete
-i 8 oito
+i
+Elisa
+PQ 2 20/03/2018 19/02/2023
+Agronomia
+i
+Emanuelly
+PQ 1C 20/03/2019 19/02/2024
+Ciencia da Computacao
+i
+Emilly
+PQ 2 20/03/2020 19/02/2025
+Alimentos
+i
+Esther
+PQ 1D 20/03/2021 19/02/2026
+Alimentos
+i
+Fernanda
+PQ 2 20/03/2017 19/02/2022
+Ciencia da Computacao
+i
+Gabriela
+PQ 1A 20/03/2018 19/02/2023
+Quimica
+i
+Gabrielle
+PQ 2 20/03/2019 19/02/2024
+Agronomia
+i
+Giovanna
+PQ 1B 20/03/2020 19/02/2025
+Agronomia
+i
+Giulia
+PQ 2 20/03/2021 19/02/2026
+Agricola
+i
+Isabel
+PQ 2 20/03/2017 19/02/2022
+Direito
+i
+Isabelly 
+PQ 2 20/03/2018 19/02/2023 
+Alimentos
+i 
+Isadora 
+PQ 2 20/03/2019 19/02/2024 
+Direito
+i 
+Isis 
+PQ 1C 20/03/2020 19/02/2025 
+Agricola
+i
+Joana 
+PQ 2 20/03/2021 19/02/2026 
+Direito
+i 
+Lara 
+PQ 2 20/03/2017 19/02/2022 
+Agronomia
+i 
+Larissa 
+PQ 2 20/03/2018 19/02/2023 
+Agronomia
+i 
+Liz 
+DT 2 20/03/2019 19/02/2024 
+Alimentos
+i 
+Lorena 
+PQ 1D 20/03/2020 19/02/2025 
+Agricola
+i 
+Luana 
+PQ 2 20/03/2021 19/02/2026 
+Alimentos
+i 
+Maria 
+PQ 2 20/03/2017 19/02/2022 
+Agronomia
 p
-i 90 noventa
-b 20
-b 60
-b 55
+i 
+Malu 
+PQ 1A 20/03/2018 19/02/2023 
+Agronomia
+i 
+Mariah 
+DT 2 20/03/2019 19/02/2024 
+Agricola
+i 
+Mariana 
+PQ 1B 20/03/2020 19/02/2025 
+Direito
+i 
+Marina 
+PQ 2 20/03/2021 19/02/2026 
+Ciencia da Computacao
+i 
+Maya 
+PQ 1C 20/03/2017 19/02/2022 
+Alimentos
+i 
+Melissa 
+PQ 2 20/03/2018 19/02/2023 
+Alimentos
+i 
+Milena 
+PQ 2 20/03/2019 19/02/2024 
+Agricola
+i 
+Mirella 
+PQ 1D 20/03/2020 19/02/2025 
+Direito
+i 
+Nicole 
+PQ 2 20/03/2021 19/02/2026 
+Alimentos
+i 
+Pietra 
+PQ 1A 20/03/2017 19/02/2022 
+Agricola
+i 
+Rafaela 
+DT 2 20/03/2018 19/02/2023 
+Agricola
+i 
+Rebeca 
+PQ 2 20/03/2019 19/02/2024 
+Agronomia
+i 
+Sara 
+PQ 1B 20/03/2020 19/02/2025 
+Direito
+i 
+Sofia 
+PQ 1C 20/03/2021 19/02/2026 
+Agronomia
+i 
+Stella 
+PQ 2 20/03/2017 19/02/2022 
+Agricola
+i 
+Yasmin 
+PQ 2 20/03/2018 19/02/2023 
+Direito
+i 
+Dante 
+PQ 1D 20/03/2019 19/02/2024 
+Agronomia
+i 
+Godolphin 
+PQ 2 20/03/2020 19/02/2025 
+Alimentos
+i 
+Harold 
+PQ 2 20/03/2021 19/02/2026 
+Alimentos
+i 
+Francis 
+PQ 2 20/03/2017 19/02/2022 
+Agricola
+p
+b Mathias
+b Antonela
+b Theo
+b Pietro
+b Luan
+b Bruna
+b Enzo
+b Fernando
+b Erick
+b Frederico
+b Mirella
+b Rian
+b Gabrielle
+b Isadora
+b Eduarda
+b Rebeca
+b Camila
+b Henrique
+b Yago
+b Sofia
+b Francis
+b Maya
+b Rodrigo
 p
 d
 s
