@@ -1,48 +1,44 @@
-#include <cstring>
-#include <iostream>
-#include "sequenceset.hpp"
-#include "learquivo.hpp"
 
+#include <fstream>
 using namespace std;
 
-int main() {
-    sequenceset meuSeqSet("teste.dat");
+fstream le_entrada;
+
+
+void leArquivo(sequenceset& meuSeqSet){ 
+    char operacao;
     dado umDado;
     tipoChave umaChave;
-    char operacao;
-
+    string area;
+    le_entrada.open("teste.input");
     do {
         try {
-            cin >> operacao;
+            le_entrada >> operacao;
             switch (operacao) {
                 case 'i': // inserir
-                    cin.ignore();
-                    getline(cin, umaChave );
+                    le_entrada.ignore();
+                    getline(le_entrada, umaChave );
                     strcpy(umDado.nome,umaChave.c_str());
                     
-                    cin>>umaChave;
-                    strcpy(umDado.modalidade,umaChave.c_str());
-                    
-                    cin>>umaChave;
-                    strcpy(umDado.nivel,umaChave.c_str());
-                    
-                    cin>>umaChave;
-                    strcpy(umDado.inicio,umaChave.c_str());
-                    
-                    cin>>umaChave;
-                    strcpy(umDado.termino,umaChave.c_str());
+                    le_entrada>>umDado.modalidade;
 
-                    cin.ignore();
-                    getline(cin, umaChave );
-                    strcpy(umDado.area,umaChave.c_str());
+                    le_entrada>>umDado.nivel;
+                    
+                    le_entrada>>umDado.inicio;
+                    
+                    le_entrada>>umDado.termino;
+                    
+                    le_entrada.ignore();
+                    getline(le_entrada, area );
+                    strcpy(umDado.area,area.c_str());
+                    
+                    //cout<<" n"<<umDado.nome<<" m"<<umDado.modalidade<<" n"<<umDado.nivel<<" i"<<umDado.inicio<<" t"<<umDado.termino<<" a"<<umDado.area<<endl;
 
                     meuSeqSet.inserirDado(umDado);
                     break;
                 case 'b': // buscar
-                    cin.ignore();
-                    getline(cin, umaChave );
-                    cout << " c"<<umaChave;
-                    cin>>operacao;
+                    le_entrada.ignore();
+                    getline(le_entrada, umaChave );
                     umDado = meuSeqSet.buscar(umaChave);
                     cout << "Busca: "<< umDado.nome << "/" << umDado.area << endl;
                     break;
@@ -51,9 +47,6 @@ int main() {
                     break;
                 case 'd': // mostrar estrutura
                     meuSeqSet.depurar();
-                    break;
-                case 'a': // ler arquivo de entrada
-                    leArquivo(meuSeqSet);
                     break;
                 case 's': // sair
                     // será tratado no while
@@ -65,6 +58,5 @@ int main() {
             cerr << e.what() << endl;
         }
     } while (operacao != 's');
-    remove("teste.dat");
-    return 0;
+    le_entrada.close();
 }
