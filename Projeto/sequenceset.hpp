@@ -159,7 +159,7 @@ void sequenceset::inserirDado(dado umDado) {
     if ( pacoteDestino->cheio() ) {
         unsigned posicaoNovoPacote = encontrarProxPosDisponivel();
         pacote* novoPacote = dividirPacote(pacoteDestino, posicaoNovoPacote); 
-        if ( umDado.nome > novoPacote->elementos[0].nome )
+        if ( strcmp(umDado.nome , novoPacote->elementos[0].nome) > 0 )
             novoPacote->inserir(umDado);
         else 
             pacoteDestino->inserir(umDado);
@@ -247,11 +247,10 @@ dado sequenceset::buscar(tipoChave chave) {
 //funcao de busca binaria recursiva
 dado sequenceset::buscaBinaria(dado vetor[], int inicio, int fim, tipoChave chave) {
     int meio = (inicio+fim)/2;
-
     if (inicio <= fim) {
-        if (chave > vetor[meio].nome)
+        if (strcmp(chave.c_str(), vetor[meio].nome) > 0)
             return buscaBinaria(vetor,meio+1,fim,chave);
-        else if (chave < vetor[meio].nome)
+        else if (strcmp(chave.c_str(), vetor[meio].nome) < 0)
             return buscaBinaria(vetor,inicio,meio-1,chave);
         else
             return vetor[meio];

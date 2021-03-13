@@ -6,6 +6,7 @@
  * -> em arquivo de configuração
  */
 #include <iostream>
+#include <string.h>
 #include "configuracao.hpp"
 
 using namespace std;
@@ -31,7 +32,7 @@ class pacote {
 void pacote::inserir( dado umDado ) {
     int posicao = numElementos - 1;
     // Faz a procura pela posição de inserção do elemento de forma decrescente
-    while ( ( posicao >= 0 ) and umDado.nome < elementos[posicao].nome ) {
+    while ( ( posicao >= 0 ) and strcmp(umDado.nome , elementos[posicao].nome) < 0 ) {
         elementos[posicao + 1] = elementos[posicao];
         posicao--;
     }
@@ -47,9 +48,10 @@ void pacote::imprimir() {
 }
 
 bool pacote::chaveEhMaiorQueTodos( tipoChave chave ) {
-    return ( elementos[numElementos - 1].nome < chave );
+    
+    return ( strcmp( elementos[numElementos - 1].nome , chave.c_str() ) < 0);
 }
 
 bool pacote::chaveEhMenorQueTodos( tipoChave chave ) {
-    return ( elementos[0].nome > chave );
+    return ( strcmp( elementos[0].nome , chave.c_str()) > 0);
 }
