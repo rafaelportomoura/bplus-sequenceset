@@ -10,9 +10,11 @@
  * -> constantes (CAP_PACOTE e MIN_PACOTE)
  */
 
+#include <string.h>
+
 using namespace std;
 
-struct elemento {  
+struct elemento {
     char nome[50];  // utilizar este campo como chave
     char modalidade[5];
     char nivel[5];
@@ -20,6 +22,11 @@ struct elemento {
     char termino[15];
     char area[60];
 };
+
+
+
+
+
 
 typedef elemento dado; // a arvore guarda informacoes do tipo Dado
 typedef string tipoChave; // tipo da chave usada na comparação
@@ -33,3 +40,22 @@ const unsigned POS_MEIO = 2;
 
 // posição inválida no disco
 const int POS_INVALIDA = -1;
+
+
+const unsigned MAXFILHOS = 7;
+
+
+
+ostream& operator<<( ostream& saida, const dado& umDado ) {
+    saida << "(" << umDado.nome << "," << umDado.modalidade << "," << umDado.nivel << "," << umDado.inicio << "," << umDado.termino <<
+        "," << umDado.area << ")";
+    return saida;
+}
+
+istream& operator>>( istream& entrada, dado& umDado ) {
+    entrada >> umDado.nome >> umDado.modalidade >> umDado.nivel >> umDado.inicio >> umDado.termino >>
+        umDado.area;
+    return entrada;
+}
+
+

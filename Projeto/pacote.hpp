@@ -6,7 +6,6 @@
  * -> em arquivo de configuração
  */
 #include <iostream>
-#include <string.h>
 #include "configuracao.hpp"
 
 using namespace std;
@@ -32,7 +31,7 @@ class pacote {
 void pacote::inserir( dado umDado ) {
     int posicao = numElementos - 1;
     // Faz a procura pela posição de inserção do elemento de forma decrescente
-    while ( ( posicao >= 0 ) and strcmp(umDado.nome , elementos[posicao].nome) < 0 ) {
+    while ( ( posicao >= 0 ) && strcmp(umDado.nome , elementos[posicao].nome) < 0 ) {
         elementos[posicao + 1] = elementos[posicao];
         posicao--;
     }
@@ -43,7 +42,7 @@ void pacote::inserir( dado umDado ) {
 void pacote::imprimir() {
     cout << "[";
     for ( unsigned i = 0; i < numElementos; i++ )
-        cout << "(" << elementos[i].nome << "/" << elementos[i].area << ")";
+        cout << elementos[i];
     cout << "]";
 }
 

@@ -12,6 +12,7 @@
 #include <fstream>
 #include <stdexcept>
 #include "pacote.hpp"
+#include "arvore.hpp"
 
 using namespace std;
 
@@ -39,7 +40,8 @@ class sequenceset {
         unsigned encontrarProxPosDisponivel();
         unsigned encontrarPacoteParaInsercao(pacote* umPacote, dado umDado);
         pacote* dividirPacote(pacote* umPacote, unsigned posNovoPacote); 
-        dado buscaBinaria(dado vetor[], int inicio, int fim, tipoChave chave);       
+        dado buscaBinaria(dado vetor[], int inicio, int fim, tipoChave chave);   
+        ArvoreBMais *minhaArvore;
     public:
         sequenceset(string arquivo);
         ~sequenceset();
@@ -47,6 +49,8 @@ class sequenceset {
         void imprimir();
         void depurar();
         dado buscar(tipoChave chave);
+        void inicializarArvore();
+        void imprimirArvore();
         /* 
         void remover(tipoChave chave);
         */
@@ -63,7 +67,7 @@ sequenceset::sequenceset(string arquivo) {
     if ( arqEntrada ) {
         arqEntrada.read((char*) &cabecalho, sizeof(cabecalhoArqSS));
         arqEntrada.close();
-        if (not cabecalhoEhConsistente(cabecalho)) {
+        if (! cabecalhoEhConsistente(cabecalho)) {
             throw runtime_error("Aplicação usa configuração diferente das usadas no arquivo");
         }
         // atualiza os dados do sequence set de acordo com o cabeçalho do arquivo
@@ -81,18 +85,20 @@ sequenceset::sequenceset(string arquivo) {
         ofstream ArqSaida(nomeArquivo);
         ArqSaida.close();
         atualizarCabecalhoNoArquivo();
-    }    
+    }
+    minhaArvore = NULL;
 }
 
 sequenceset::~sequenceset() {
     // apenas atualiza o cabeçalho, para garantir que esteja tudo ok
     atualizarCabecalhoNoArquivo(); 
+    minhaArvore = NULL;
 }
 
 bool sequenceset::cabecalhoEhConsistente(const cabecalhoArqSS& umCabecalho) {
     return ((umCabecalho.capacidadeMaxPacote == CAP_PACOTE)
-             and (umCabecalho.capacidadeMinPacote == MIN_PACOTE)
-             and (umCabecalho.posicaoMeio == POS_MEIO));    
+             && (umCabecalho.capacidadeMinPacote == MIN_PACOTE)
+             && (umCabecalho.posicaoMeio == POS_MEIO));    
 }
 
 void sequenceset::atualizarCabecalhoNoArquivo() {
@@ -197,7 +203,7 @@ unsigned sequenceset::encontrarPacoteParaInsercao(pacote* umPacote, dado umDado)
         // este laço vai lendo pacotes do disco, enquanto a chave
         // for maior que os valores do pacote atual
         while ( (umPacote->posProximoPacote != POS_INVALIDA)
-                 and (umPacote->chaveEhMaiorQueTodos(umDado.nome)) ) {
+                 && (umPacote->chaveEhMaiorQueTodos(umDado.nome)) ) {
             posicao = umPacote->posProximoPacote;
             lerPacoteDoArquivo(umPacote, posicao);
         }
@@ -228,19 +234,24 @@ dado sequenceset::buscar(tipoChave chave) {
     // procura o pacote que poderia conter o elemento
     else {
         pacote* umPacote = new pacote();
-        lerPacoteDoArquivo(umPacote, posPrimeiroPacote);
-
-        // este laço vai lendo pacotes do disco, enquanto a chave
-        // for maior que os valores do pacote atual
-        while ( (umPacote->posProximoPacote != POS_INVALIDA)
-                 and (umPacote->chaveEhMaiorQueTodos(chave)) ) {
-            lerPacoteDoArquivo(umPacote, umPacote->posProximoPacote);
+        if ( minhaArvore != NULL ) {
+            return minhaArvore->Busca( chave );
         }
-        // ou o dado está no pacote que saiu do while 
-        // ou não existe no sequence set - precisa agora buscar o elemento no 
-        // vetor de elementos
+        else {
+            lerPacoteDoArquivo( umPacote, posPrimeiroPacote );
+            // este laço vai lendo pacotes do disco, enquanto a chave
+            // for maior que os valores do pacote atual
+            while ( ( umPacote->posProximoPacote != POS_INVALIDA )
+                     && ( umPacote->chaveEhMaiorQueTodos( chave ) ) ) {
+                lerPacoteDoArquivo( umPacote, umPacote->posProximoPacote );
+            }
+            // ou o dado está no pacote que saiu do while 
+            // ou não existe no sequence set - precisa agora buscar o elemento no 
+            // vetor de elementos
+        }
+        
 
-        return buscaBinaria(umPacote->elementos, 0, umPacote->numElementos-1, chave);
+        return buscaBinaria(umPacote->elementos, 0, umPacote->numElementos-1, chave); 
     } 
 }
 
@@ -305,4 +316,44 @@ void sequenceset::depurar() {
         delete auxiliar;
     }
     cout << endl << "-*- Fim dos Dados -*-" << endl;  
+}
+
+
+void sequenceset::inicializarArvore() {
+
+    if ( minhaArvore == NULL ) {
+        minhaArvore = new ArvoreBMais;
+    }
+    else {
+        delete minhaArvore;
+        minhaArvore = new ArvoreBMais;
+    }
+    if (numPacotes > 0){
+        pacote* auxiliar = new pacote();
+        unsigned posicao = posPrimeiroPacote;
+        lerPacoteDoArquivo(auxiliar,posPrimeiroPacote);
+        while (auxiliar->posProximoPacote != POS_INVALIDA)    {
+            for ( int i = 0; i < auxiliar->numElementos; i++ ) {
+                minhaArvore->insere( auxiliar->elementos[i]);
+            }
+            
+            posicao = auxiliar->posProximoPacote;
+            lerPacoteDoArquivo(auxiliar,auxiliar->posProximoPacote);
+        }
+        for ( int i = 0; i < auxiliar->numElementos; i++ ) {
+            minhaArvore->insere( auxiliar->elementos[i] );
+        }
+
+    }
+    
+}
+
+void sequenceset::imprimirArvore(){
+    
+    if ( minhaArvore == NULL ) {
+        throw runtime_error("Imprimir Arvore: Arvore Vazia");
+    }
+    else {
+        minhaArvore->imprimir();
+    }
 }

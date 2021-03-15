@@ -38,6 +38,12 @@
     "files.autoSave": "onFocusChange",
     "workbench.startupEditor": "newUntitledFile",
     "cSpell.words": [
+        "arvore",
+        "inicializar",
         "operacao"
     ],
+    "files.associations": {
+        "istream": "cpp",
+        "string": "cpp"
+    },
 }
